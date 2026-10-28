@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" role="img" aria-label="Underwater Swim Cap and Goggles Detection on the Edge">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" role="img" aria-label="Swim caps and goggles floating and sinking in a pool">
   <defs>
     <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#3fc4e8"/>
@@ -9,12 +9,19 @@
       .w2 { animation: drift 6s linear infinite reverse; }
       .w3 { animation: drift 12s linear infinite; }
       .b  { animation: rise 6s ease-in infinite; }
-      .swim { animation: swim 14s linear infinite; }
-      .bob  { animation: bob 2.4s ease-in-out infinite; }
+      .drift1 { animation: across 26s linear infinite; }
+      .drift2 { animation: across 34s linear infinite; animation-delay: -12s; }
+      .drift3 { animation: across 30s linear infinite; animation-delay: -22s; }
+      .bob  { animation: bob 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .sink { animation: sink 9s ease-in infinite; transform-box: fill-box; transform-origin: center; }
       @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-600px); } }
       @keyframes rise  { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: .8; } 100% { transform: translateY(-190px); opacity: 0; } }
-      @keyframes swim  { from { transform: translateX(-160px); } to { transform: translateX(1360px); } }
-      @keyframes bob   { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+      @keyframes across { from { transform: translateX(-80px); } to { transform: translateX(1280px); } }
+      @keyframes bob   { 0%, 100% { transform: translateY(0) rotate(-7deg); } 50% { transform: translateY(6px) rotate(7deg); } }
+      @keyframes sink  { 0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+                         10% { opacity: 1; }
+                         85% { transform: translate(18px, 170px) rotate(35deg); opacity: 1; }
+                         100% { transform: translate(18px, 170px) rotate(35deg); opacity: 0; } }
       text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
     </style>
   </defs>
@@ -32,17 +39,12 @@
     <path fill="#e8fbff" d="M0 40 Q150 15 300 40 T600 40 T900 40 T1200 40 T1500 40 T1800 40 V0 H0 Z"/>
   </g>
 
-  <!-- swimmer with cap and goggles crossing the pool -->
-  <g class="swim">
-    <g transform="translate(0 125)"><g class="bob">
-      <ellipse cx="0" cy="0" rx="46" ry="11" fill="#062e52" opacity=".85"/>
-      <circle cx="54" cy="-3" r="15" fill="#f2c9a0"/>
-      <path d="M40 -8 A15 15 0 0 1 68 -10 L68 -4 L40 -2 Z" fill="#e63946"/>
-      <rect x="58" y="-3" width="12" height="6" rx="3" fill="#1d3557" stroke="#a8dadc" stroke-width="1.5"/>
-      <path d="M-46 0 Q-62 -14 -76 -2" stroke="#062e52" stroke-width="6" fill="none" stroke-linecap="round"/>
-      <path d="M20 -6 Q34 -30 52 -26" stroke="#062e52" stroke-width="6" fill="none" stroke-linecap="round"/>
-    </g></g>
-  </g>
+  <!-- caps and goggles floating at the surface and sinking to the floor -->
+  <g class="drift1"><g transform="translate(0 78)"><g class="bob"><path d="M-24 6 A24 21 0 0 1 24 6 Z" fill="#e63946"/><path d="M-24 6 H24" stroke="#ffffff" stroke-opacity=".5" stroke-width="2"/><path d="M-12 -8 Q0 -14 12 -8" stroke="#ffffff" stroke-opacity=".35" stroke-width="2" fill="none"/></g></g></g>
+  <g class="drift2"><g transform="translate(0 84)"><g class="bob" style="animation-delay:-1.2s"><path d="M-30 0 Q-38 -10 -44 -2" stroke="#2a2a2a" stroke-width="3" fill="none"/><path d="M30 0 Q38 -10 44 -2" stroke="#2a2a2a" stroke-width="3" fill="none"/><ellipse cx="-14" cy="0" rx="13" ry="8" fill="#1d3557" stroke="#a8dadc" stroke-width="2.5"/><ellipse cx="14" cy="0" rx="13" ry="8" fill="#1d3557" stroke="#a8dadc" stroke-width="2.5"/><path d="M-2 0 H2" stroke="#a8dadc" stroke-width="3"/><ellipse cx="-18" cy="-3" rx="4" ry="2" fill="#ffffff" opacity=".5"/><ellipse cx="10" cy="-3" rx="4" ry="2" fill="#ffffff" opacity=".5"/></g></g></g>
+  <g class="drift3"><g transform="translate(0 80)"><g class="bob" style="animation-delay:-.6s"><path d="M-24 6 A24 21 0 0 1 24 6 Z" fill="#f4a261"/><path d="M-24 6 H24" stroke="#ffffff" stroke-opacity=".5" stroke-width="2"/><path d="M-12 -8 Q0 -14 12 -8" stroke="#ffffff" stroke-opacity=".35" stroke-width="2" fill="none"/></g></g></g>
+  <g transform="translate(90 70)"><g class="sink"><path d="M-24 6 A24 21 0 0 1 24 6 Z" fill="#2a9d8f"/><path d="M-24 6 H24" stroke="#ffffff" stroke-opacity=".5" stroke-width="2"/><path d="M-12 -8 Q0 -14 12 -8" stroke="#ffffff" stroke-opacity=".35" stroke-width="2" fill="none"/></g></g>
+  <g transform="translate(1105 70)"><g class="sink" style="animation-delay:-4s"><path d="M-30 0 Q-38 -10 -44 -2" stroke="#2a2a2a" stroke-width="3" fill="none"/><path d="M30 0 Q38 -10 44 -2" stroke="#2a2a2a" stroke-width="3" fill="none"/><ellipse cx="-14" cy="0" rx="13" ry="8" fill="#1d3557" stroke="#a8dadc" stroke-width="2.5"/><ellipse cx="14" cy="0" rx="13" ry="8" fill="#1d3557" stroke="#a8dadc" stroke-width="2.5"/><path d="M-2 0 H2" stroke="#a8dadc" stroke-width="3"/><ellipse cx="-18" cy="-3" rx="4" ry="2" fill="#ffffff" opacity=".5"/><ellipse cx="10" cy="-3" rx="4" ry="2" fill="#ffffff" opacity=".5"/></g></g>
 
   <!-- bubbles -->
   <g fill="#ffffff">
