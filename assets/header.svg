@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" role="img" aria-label="Underwater Swim Cap and Goggles Detection on the Edge">
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3fc4e8"/>
+      <stop offset="1" stop-color="#0a4f8a"/>
+    </linearGradient>
+    <style>
+      .w1 { animation: drift 9s linear infinite; }
+      .w2 { animation: drift 6s linear infinite reverse; }
+      .w3 { animation: drift 12s linear infinite; }
+      .b  { animation: rise 6s ease-in infinite; }
+      .swim { animation: swim 14s linear infinite; }
+      .bob  { animation: bob 2.4s ease-in-out infinite; }
+      @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-600px); } }
+      @keyframes rise  { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: .8; } 100% { transform: translateY(-190px); opacity: 0; } }
+      @keyframes swim  { from { transform: translateX(-160px); } to { transform: translateX(1360px); } }
+      @keyframes bob   { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#water)"/>
+
+  <!-- waves (each path is 1800 wide and repeats every 600 px so the drift loops seamlessly) -->
+  <g class="w3" opacity=".25">
+    <path fill="#ffffff" d="M0 70 Q150 40 300 70 T600 70 T900 70 T1200 70 T1500 70 T1800 70 V0 H0 Z"/>
+  </g>
+  <g class="w2" opacity=".35">
+    <path fill="#ffffff" d="M0 55 Q150 85 300 55 T600 55 T900 55 T1200 55 T1500 55 T1800 55 V0 H0 Z"/>
+  </g>
+  <g class="w1" opacity=".55">
+    <path fill="#e8fbff" d="M0 40 Q150 15 300 40 T600 40 T900 40 T1200 40 T1500 40 T1800 40 V0 H0 Z"/>
+  </g>
+
+  <!-- swimmer with cap and goggles crossing the pool -->
+  <g class="swim">
+    <g transform="translate(0 125)"><g class="bob">
+      <ellipse cx="0" cy="0" rx="46" ry="11" fill="#062e52" opacity=".85"/>
+      <circle cx="54" cy="-3" r="15" fill="#f2c9a0"/>
+      <path d="M40 -8 A15 15 0 0 1 68 -10 L68 -4 L40 -2 Z" fill="#e63946"/>
+      <rect x="58" y="-3" width="12" height="6" rx="3" fill="#1d3557" stroke="#a8dadc" stroke-width="1.5"/>
+      <path d="M-46 0 Q-62 -14 -76 -2" stroke="#062e52" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M20 -6 Q34 -30 52 -26" stroke="#062e52" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g></g>
+  </g>
+
+  <!-- bubbles -->
+  <g fill="#ffffff">
+    <circle class="b" cx="140" cy="290" r="5" style="animation-delay:0s"/>
+    <circle class="b" cx="320" cy="295" r="3" style="animation-delay:1.5s"/>
+    <circle class="b" cx="510" cy="292" r="6" style="animation-delay:3s"/>
+    <circle class="b" cx="760" cy="296" r="4" style="animation-delay:.8s"/>
+    <circle class="b" cx="930" cy="290" r="5" style="animation-delay:2.2s"/>
+    <circle class="b" cx="1090" cy="294" r="3" style="animation-delay:4s"/>
+  </g>
+
+  <!-- pool floor tiles -->
+  <g stroke="#ffffff" stroke-opacity=".18" stroke-width="2">
+    <line x1="0" y1="268" x2="1200" y2="268"/>
+    <line x1="100" y1="268" x2="60" y2="300"/><line x1="300" y1="268" x2="280" y2="300"/>
+    <line x1="500" y1="268" x2="495" y2="300"/><line x1="700" y1="268" x2="705" y2="300"/>
+    <line x1="900" y1="268" x2="920" y2="300"/><line x1="1100" y1="268" x2="1140" y2="300"/>
+  </g>
+
+  <text x="600" y="200" text-anchor="middle" font-size="44" font-weight="700" fill="#ffffff">Underwater Swim Cap &amp; Goggles Detection</text>
+  <text x="600" y="240" text-anchor="middle" font-size="22" fill="#d9f6ff">GoPro HERO13 · Raspberry Pi Zero 2 W · YOLOv8n on Jetson Nano (TensorRT)</text>
+</svg>

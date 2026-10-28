@@ -1,9 +1,14 @@
 <div align="center">
 
-# 🏊 Underwater Swim Cap & Goggles Detection on the Edge
+<img src="assets/header.svg" width="100%" alt="Underwater Swim Cap and Goggles Detection">
+
+# Underwater Swim Cap & Goggles Detection on the Edge
 
 **On-demand detection and counting of swim caps and swimming goggles underwater,<br>
 with a GoPro HERO13, a Raspberry Pi Zero 2 W and a YOLOv8n TensorRT engine on a Jetson Nano.**
+
+<sub>Code, model and results for the paper <i>On-Demand Underwater Detection and Counting of Swimming Goggles and Swim Caps Using Edge AI</i> (under review) ·
+Faculty of Engineering at Sriracha, Kasetsart University</sub>
 
 [![Dataset](https://img.shields.io/badge/Dataset-Roboflow%20Universe%20v4-6706CE)](https://universe.roboflow.com/detect-object-under-water/dataset-real-g3nyo/dataset/4)
 [![Model](https://img.shields.io/badge/Model-YOLOv8n-00FFFF)](https://github.com/ultralytics/ultralytics)
