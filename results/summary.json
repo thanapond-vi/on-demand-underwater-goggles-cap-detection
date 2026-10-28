@@ -1,0 +1,239 @@
+{
+  "created": "2026-10-28T19:52:04",
+  "model": {
+    "architecture": "YOLOv8n",
+    "init_weights": "yolov8n.pt",
+    "classes": [
+      "cap",
+      "glasses"
+    ],
+    "parameters": 3011238,
+    "gflops_at_imgsz": 8.19,
+    "best_pt_mb": 5.97,
+    "best_pt_sha256": "816304085c407770d75f4fe7a7690b1799a849285844bad6b100d8ead83c7008",
+    "last_pt_sha256": "3dd8329c0f406db164cd671f42f3ef1824559c91d64847785314ff6379d2a9ad"
+  },
+  "training": {
+    "epochs_max": 100,
+    "epochs_run": 100,
+    "best_epoch": 51,
+    "early_stopped": false,
+    "patience": 100,
+    "train_time_hours": 0.493,
+    "optimizer_resolved": {
+      "name": "AdamW",
+      "lr": 0.001667,
+      "momentum": 0.9
+    },
+    "imgsz": 640,
+    "batch": 8,
+    "seed": 0,
+    "deterministic": true,
+    "amp": true,
+    "preprocessing": "letterbox to 640x640: longer side scaled to 640 (aspect ratio preserved, INTER_AREA down / INTER_LINEAR up), centered gray (114) padding",
+    "augmentation": {
+      "hsv_h": 0.015,
+      "hsv_s": 0.7,
+      "hsv_v": 0.4,
+      "degrees": 0.0,
+      "translate": 0.1,
+      "scale": 0.5,
+      "shear": 0.0,
+      "perspective": 0.0,
+      "flipud": 0.0,
+      "fliplr": 0.5,
+      "mosaic": 1.0,
+      "mixup": 0.0,
+      "copy_paste": 0.0,
+      "close_mosaic": 10
+    },
+    "hyperparameters": {
+      "optimizer": "auto",
+      "lr0": 0.01,
+      "lrf": 0.01,
+      "momentum": 0.937,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 3.0,
+      "warmup_momentum": 0.8,
+      "warmup_bias_lr": 0.1,
+      "box": 7.5,
+      "cls": 0.5,
+      "dfl": 1.5,
+      "cos_lr": false,
+      "iou": 0.7
+    }
+  },
+  "dataset": {
+    "roboflow": {
+      "workspace": "detect-object-under-water",
+      "project": "dataset-real-g3nyo",
+      "version": 4,
+      "license": "Private",
+      "url": "https://app.roboflow.com/detect-object-under-water/dataset-real-g3nyo/4"
+    },
+    "splits": {
+      "train": {
+        "images": 300,
+        "background_images": 0,
+        "instances": {
+          "cap": 1479,
+          "glasses": 993
+        },
+        "width": {
+          "min": 1830,
+          "median": 1984.0,
+          "max": 2048
+        },
+        "height": {
+          "min": 1602,
+          "median": 1736.0,
+          "max": 1792
+        },
+        "relative_box_area": {
+          "min": 9e-05,
+          "median": 0.00149,
+          "max": 0.14978
+        }
+      },
+      "valid": {
+        "images": 28,
+        "background_images": 0,
+        "instances": {
+          "cap": 149,
+          "glasses": 107
+        },
+        "width": {
+          "min": 2048,
+          "median": 2048.0,
+          "max": 2048
+        },
+        "height": {
+          "min": 1792,
+          "median": 1792.0,
+          "max": 1792
+        },
+        "relative_box_area": {
+          "min": 0.00038,
+          "median": 0.00193,
+          "max": 0.0208
+        }
+      },
+      "test": {
+        "images": 22,
+        "background_images": 0,
+        "instances": {
+          "cap": 126,
+          "glasses": 73
+        },
+        "width": {
+          "min": 2048,
+          "median": 2048.0,
+          "max": 2048
+        },
+        "height": {
+          "min": 1792,
+          "median": 1792.0,
+          "max": 1792
+        },
+        "relative_box_area": {
+          "min": 0.00037,
+          "median": 0.00236,
+          "max": 0.0245
+        }
+      }
+    },
+    "manifest_sha256": "bcbc4d6cc929d8408767a2d2a17ffd9a0aa87d1ac81ac0c5a300ea040c78a8b2"
+  },
+  "metrics": {
+    "val": {
+      "split": "val",
+      "all": {
+        "precision": 0.8147947486710666,
+        "recall": 0.714075142695854,
+        "f1": 0.7611173190217395,
+        "mAP50": 0.7733097872457245,
+        "mAP50-95": 0.40575252510695786
+      },
+      "per_class": {
+        "cap": {
+          "precision": 0.885141012747338,
+          "recall": 0.6711409395973155,
+          "f1": 0.7634276939038984,
+          "mAP50": 0.7779579500722871,
+          "mAP50-95": 0.533367920026716
+        },
+        "glasses": {
+          "precision": 0.7444484845947952,
+          "recall": 0.7570093457943925,
+          "f1": 0.750676374513503,
+          "mAP50": 0.768661624419162,
+          "mAP50-95": 0.2781371301871999
+        }
+      },
+      "speed_ms_per_image": {
+        "preprocess": 2.306,
+        "inference": 13.585,
+        "loss": 0.0,
+        "postprocess": 5.851
+      },
+      "eval_settings": {
+        "conf": 0.001,
+        "iou_nms": 0.7,
+        "imgsz": 640,
+        "device": "mps"
+      }
+    },
+    "test": {
+      "split": "test",
+      "all": {
+        "precision": 0.7628413940289842,
+        "recall": 0.6357903892150467,
+        "f1": 0.6935452670667837,
+        "mAP50": 0.7006085669030098,
+        "mAP50-95": 0.38756633506472793
+      },
+      "per_class": {
+        "cap": {
+          "precision": 0.8374043203140605,
+          "recall": 0.6825396825396826,
+          "f1": 0.7520825476088491,
+          "mAP50": 0.7929481494292187,
+          "mAP50-95": 0.5370147700185568
+        },
+        "glasses": {
+          "precision": 0.6882784677439078,
+          "recall": 0.589041095890411,
+          "f1": 0.6348048122963103,
+          "mAP50": 0.608268984376801,
+          "mAP50-95": 0.238117900110899
+        }
+      },
+      "speed_ms_per_image": {
+        "preprocess": 0.455,
+        "inference": 14.274,
+        "loss": 0.0,
+        "postprocess": 2.03
+      },
+      "eval_settings": {
+        "conf": 0.001,
+        "iou_nms": 0.7,
+        "imgsz": 640,
+        "device": "mps"
+      }
+    }
+  },
+  "environment": {
+    "os": "macOS-26.7.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "cpu": "Apple M4",
+    "ram_gb": 16.0,
+    "python": "3.14.3",
+    "torch": "2.14.1",
+    "ultralytics": "8.4.173",
+    "opencv": "4.13.0",
+    "numpy": "2.4.3",
+    "device": "mps",
+    "cuda": null,
+    "gpu": "Apple MPS"
+  }
+}

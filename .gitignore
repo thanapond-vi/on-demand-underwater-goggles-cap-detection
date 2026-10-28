@@ -1,0 +1,7 @@
+.env
+datasets/
+runs/
+images/
+*.engine
+__pycache__/
+.DS_Store
