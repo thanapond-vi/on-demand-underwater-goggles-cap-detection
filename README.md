@@ -7,7 +7,7 @@
 **On-demand detection and counting of swim caps and swimming goggles underwater,<br>
 with a GoPro HERO13, a Raspberry Pi Zero 2 W and a YOLOv8n TensorRT engine on a Jetson Nano.**
 
-<sub>Code, model and results for the paper <i>On-Demand Underwater Detection and Counting of Swimming Goggles and Swim Caps Using Edge AI</i> (under review) ·
+<sub>Code, model and results for the manuscript <i>On-Demand Underwater Detection and Counting of Swimming Goggles and Swim Caps Using Edge AI</i> (unpublished) ·
 Faculty of Engineering at Sriracha, Kasetsart University</sub>
 
 [![Dataset](https://img.shields.io/badge/Dataset-Roboflow%20Universe%20v4-6706CE)](https://universe.roboflow.com/detect-object-under-water/dataset-real-g3nyo/dataset/4)
@@ -103,7 +103,7 @@ python3 train_yolov8n.py   --data datasets/dataset-real-g3nyo-v4 --epochs 100 --
 python3 tune_threshold.py  --data datasets/dataset-real-g3nyo-v4 --split valid --model models/model_X3.pt --iou 0.3 0.4 0.5 0.7
 python3 compare_test.py    --data datasets/dataset-real-g3nyo-v4 --split test  --model models/model_X3.pt --out runs/test_compare
 ```
-Paper settings: imgsz 640 · batch 8 · seed 0 · 100 epochs, no early stopping · best checkpoint by validation fitness ·
+Settings used in the manuscript: imgsz 640 · batch 8 · seed 0 · 100 epochs, no early stopping · best checkpoint by validation fitness ·
 Ultralytics 8.4.173 · PyTorch 2.14.1 · Apple M4 (MPS).
 
 ## 🟩 Run on the Jetson Nano
@@ -142,7 +142,7 @@ results/               metrics, training history, evaluation plots, per-photo te
   author = {Chansuksri, Pisitpong and Visessang, Thanapond and Chumchu, Prawit},
   title  = {On-Demand Underwater Detection and Counting of Swimming Goggles and Swim Caps Using Edge AI},
   year   = {2026},
-  note   = {Under review},
+  note   = {Unpublished manuscript, Faculty of Engineering at Sriracha, Kasetsart University},
   url    = {https://github.com/thanapond-vi/dataset-real-g3nyo}
 }
 ```
