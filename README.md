@@ -96,7 +96,7 @@ that Ultralytics reports at its own F1-optimal confidence, so those two columns 
 
 ## 🚀 Quick start
 ```bash
-git clone https://github.com/thanapond-vi/dataset-real-g3nyo.git && cd dataset-real-g3nyo
+git clone https://github.com/thanapond-vi/on-demand-underwater-goggles-cap-detection.git && cd on-demand-underwater-goggles-cap-detection
 pip install -r requirements.txt
 # download the Roboflow v4 export (YOLOv8 format) into datasets/dataset-real-g3nyo-v4
 python3 train_yolov8n.py   --data datasets/dataset-real-g3nyo-v4 --epochs 100 --patience 100 --name model_X3
@@ -143,7 +143,7 @@ results/               metrics, training history, evaluation plots, per-photo te
   title  = {On-Demand Underwater Detection and Counting of Swimming Goggles and Swim Caps Using Edge AI},
   year   = {2026},
   note   = {Unpublished manuscript, Faculty of Engineering at Sriracha, Kasetsart University},
-  url    = {https://github.com/thanapond-vi/dataset-real-g3nyo}
+  url    = {https://github.com/thanapond-vi/on-demand-underwater-goggles-cap-detection}
 }
 ```
 
